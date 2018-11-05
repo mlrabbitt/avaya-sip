@@ -1,5 +1,4 @@
-# avaya-sip
-Tips for using Avaya 96xx phones in a 3rd party call control environment
+# Tips for using Avaya 96xx phones in a 3rd party call control environment
 
 This repository contains a sample 46xxsettings.txt file to connect Avaya 96xx phones to a PBX via a SIP proxy.  It also contains a sample Kamailio SIP proxy configuration file.
 
