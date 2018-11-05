@@ -1,0 +1,43 @@
+#PBX
+SET SIPDOMAIN YOUR_PBX_IP
+
+#Kamailio Proxy
+SET SIP_CONTROLLER_LIST YOUR_PROXY_IP:YOUR_PROXY_PORT;transport=tcp
+
+#PPM server if you choose to use "AST" mode
+#SET CONFIG_SERVER YOUR_PPM_SERVER_IP
+#SET CONFIG_SERVER_SECURE_MODE 0
+
+#From what I can tell DISCOVER_AVAYA_ENVIRONMENT doesn't do anything
+#Setting ENABLE_AVAYA_ENVIRONMENT to 0 will disable "AST" mode though
+SET DISCOVER_AVAYA_ENVIRONMENT 0
+SET ENABLE_AVAYA_ENVIRONMENT 0
+
+#Set NTP/TIME settings
+SET SNTPSRVR YOUR_NTP_SERVER
+#This is for Eastern time zone, set accordingly
+SET GMTOFFSET "-5:00"
+
+#This has to be set when using a proxy, only works in firmware 7.0, if you find a way to successfully use the phone
+#behind proxy in firmware 7.1, please let me know :)
+SET CONNECTION_REUSE 0
+
+#Default registration is every 900 seconds, My PBX requires it every 600, so I set it to 500 here
+SET REGISTERWAIT 500
+
+#Voicemail number
+#MSGNUM doesn't do anything in "SIPPING 19" mode, you have to use PSTN_VM_NUM
+#SET MSGNUM YOUR_VOICEMAIL_NUMBER
+SET PSTN_VM_NUM YOUR_VOICEMAIL_NUMBER
+SET MWISRVR YOUR_PROXY_IP
+
+#I can't remember if this actually works in "AST" mode, if so its a good way to keep from having to worry about
+#users changing contacts you're supplying via PPM if you don't support all the update/change methods
+#SET ENABLE_MODIFY_CONTACTS 0
+
+#Dialplan and dialplan timeout
+SET DIALPLAN 911|[3567]XXX|9999|9Z1XXXXXXXXXX
+SET INTER_DIGIT_TIMEOUT 3
+
+#Display number then name on calls
+SET DISPLAY_NAME_NUMBER 3
