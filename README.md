@@ -15,4 +15,4 @@ The 46xxsettings.txt file and avaya-sip-proxy.cfg file both contain comments wit
 * I found in testing the phones with 3CX, they didn't display caller name information.  If you see caller name information on your PBX without any additional configuration, I'd be interested in seeing the SIP dialog and knowing which Avaya firmware you are using
 * My reason for having the phone behind a proxy in the first place is because most PBXs can't easily modify the headers for normal internal calls
 * Avaya 96xx phones only send and receive SIP messages over TCP or TCP w/ TLS, I can't tell based on the notes in Avaya's provided 46xxsettings.txt examples if this was always the case
-* In firmware 7.1, on 96x1 phones only you can force the phone to login to a specific extension using just the 46xxsettings.txt using SET FORCE_SIP_USERNAME, SET FORCE_SIP_PASSWORD, and SET FORCE_SIP_EXTENSION configuration parameters
+* In firmware 7.1, on 96x1 phones only you can force the phone to login to a specific extension using just the 46xxsettings.txt using `SET FORCE_SIP_USERNAME`, `SET FORCE_SIP_PASSWORD`, and `SET FORCE_SIP_EXTENSION` configuration parameters
